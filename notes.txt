@@ -1,0 +1,25 @@
+ls
+-- list the contents of the directory
+
+ls -l
+-- list, long (the contents of the directory)
+-- permissions: read/write/execute status
+** -- drwxrwxrwx (directory, read, write, execute ... )
+** -- drwx...... the user permissions (who created it)
+** -- d...rwx... the group permissions
+** -- d......rwx the public permissions
+-- user setting
+-- group setting
+-- size
+-- date
+-- filename
+
+ls -a
+-- list, all (the contents of the directory)
+-- shows hidden files (dot-files)
+
+ls /etc
+-- list, the contents of the etc directory
+
+clear
+-- clear the contents of the console
