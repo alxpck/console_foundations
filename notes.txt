@@ -23,3 +23,67 @@ ls /etc
 
 clear
 -- clear the contents of the console
+
+less filename.txt
+-- opens a simple text editor like vi or nano.
+
+more filename.txt
+-- opens a simple text editor like vi, nano, or less.
+
+cat filename.txt another_file.txt
+-- displays the output of multiple files (as though they were concatenated)... if you only list one file it will concatenate it with nothing, and it's just used to print out the files. If you don't save the output to a new file, cat will not automatically save it for you. 
+
+nano filename.txt
+-- opens a simple text editor like vi, more, or less. 
+
+mv oldname.txt newname.txt
+-- move the file from one location (name) to another (name).
+   This can be used to rename a file. 
+
+mv oldname.txt directoryname/
+-- move the file from the current directory to the new directory
+   using the same name. This command will move oldname.txt from 
+   the current directory to directoryname/oldname.txt
+
+mv directoryname/oldname.txt .
+-- move oldname.txt to the current directory ( . )
+
+mv oldname.txt directoryname/newname.txt
+-- move the file and rename it
+
+mv old_dir/ new_dir/
+-- move (rename) the directory from old_dir/ to new_dir/
+
+cp oldfile.txt newfile.txt
+-- copies the file from oldfile.txt to newfile.txt
+
+cp old_dir/ new_dir/
+-- NO... copy will not work on directories without the  
+   recursive flag (see below)
+
+cp -r old_dir/ new_dir/
+-- copies a directory (and all the files within it) into a 
+   new directory
+
+rm filename.txt
+-- remove (delete) the file, permanently
+
+rm old_dir/
+-- NO... remove will not work without the recursive flag
+
+rm -r old_dir/
+-- remove the directory (and all the files within it), permanently
+
+mkdir new_dir/
+-- makes a directory named new_dir
+
+mkdir new_dir/sub_dir/subsub_dir/
+-- NO... make directory won't make nested directories without the
+   -p flag (paths? permissions?)
+
+mkdir -p new_dir/sub_dir/subsub_dir/
+-- make nested directories
+
+
+
+
