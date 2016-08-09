@@ -31,7 +31,11 @@ more filename.txt
 -- opens a simple text editor like vi, nano, or less.
 
 cat filename.txt another_file.txt
--- displays the output of multiple files (as though they were concatenated)... if you only list one file it will concatenate it with nothing, and it's just used to print out the files. If you don't save the output to a new file, cat will not automatically save it for you. 
+-- displays the output of multiple files (as though they 
+   were concatenated)... if you only list one file it 
+   will concatenate it with nothing, and it's just used 
+   to print out the files. If you don't save the output 
+   to a new file, cat will not automatically save it for you. 
 
 nano filename.txt
 -- opens a simple text editor like vi, more, or less. 
@@ -84,6 +88,114 @@ mkdir new_dir/sub_dir/subsub_dir/
 mkdir -p new_dir/sub_dir/subsub_dir/
 -- make nested directories
 
+whoami
+-- print the name of the current user (probably displayed in the pompt)
 
+sudo
+-- superuser do, a method for running a command that requires permissions
+   greater than the permissions assigned to the current user 
 
+sudo adduser newusername
+-- add a user to the system named newusername. It creates a user 'newusername'
+   it also creates a group 'newusername' and it creates a new user 'newusername'
+   with the group 'newusername.' It also creates a new directory for 'newusername'
+   which is the home directory for this user. Creating a user also prompts us to
+   enter information about the user: password, full name, room number, work phone
+   home phone, and other.
 
+su newusername
+-- switch user to 'newusername.' It seems like it's kinda 'virtual' because if
+   you exit from the switch user command you return to the user you were in before
+
+exit
+-- will pull you out a switch user (su) command. It will also log you out of an
+   ssh connection. 
+
+PERMISSIONS
+-- r = read
+-- w = write
+-- x = execute
+-- u = user level permissions
+-- g = group level permission
+-- o = other (world) level permission
+-- drwx-rwx-rwx (d = it's a directory, no d = it's a file)
+-- drwx-rwx-rwx (dir) (user) (group) (other)
+-- if a permission is written it's true, if it's a dash it's false.
+
+chmod [u/g/o][+/-][rwx] filename
+-- change the mode (permissions) of the file
+   Example: chmod o+w filename
+
+Octal Permissions
+-- r = 4
+-- w = 2
+-- x = 1
+   rwx = 7
+   rw- = 6
+   r-x = 5
+   r-- = 4
+   -wx = 3
+   -w- = 2
+   --x = 1
+   --- = 0
+
+chmod [1-7/1-7/1-7] filename
+-- change the mode (permissions) of the file using octal codes. The first set of
+   octal codes is for the user. The second for the group. The third for other.
+
+chown username filename
+-- change the owner of the file. If you don't have the proper permissions you 
+   may need run the command as a superuser (i.e. sudo chown username filename)
+
+chown username:group filename
+-- change the owner and the group of the file. You may need sudo. 
+
+notes on the root user
+-- root is all powerful, this user can override all permissions on every file
+   and directory on the computer.
+
+sudo
+-- allows you to run a command as the root user, without explicitly switching
+   to root or knowing the root password
+
+!! 
+-- run the last command I ran again (double bang)
+
+sudo !!
+-- append the last command to sudo, so that I don't have to retype everything
+   if i realize I needed sudo  
+
+top
+-- a process manager that shows you real-time info about processes running 
+   on the computer
+
+ps
+-- shows the processes that are running
+
+ps aux
+-- aux are options, usually they'd be passed with hyphens, but not here.
+   aux will show all of the processes running on the computer, for all 
+   the users 
+
+ps aux | grep "top"
+-- show all the processes and then pipe "|" the results to a grep search
+   which looks for the pattern "top" and then only returns results that match
+
+[Control-Z] (or Command-Z since I remapped it)
+-- a shortcut for pausing a process and making it a job that I can start
+   and stop when I want to move between programs
+
+fg
+-- foreground brings the (most recently used) job to the foreground 
+
+fg [1-n]
+-- bring job [number] to the foreground
+
+jobs
+-- list all the jobs running
+
+[command] &
+-- placing the ampersand "&" after a command will automatically move it to
+   the background and place it in the jobs list. ... There seems to be an 
+   error with getting my system to place the job in the background instead
+   of stopping it. 
