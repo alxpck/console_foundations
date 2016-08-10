@@ -199,3 +199,20 @@ jobs
    the background and place it in the jobs list. ... There seems to be an 
    error with getting my system to place the job in the background instead
    of stopping it. 
+
+kill [PID]
+kill -TERM [PID]
+kill -SIGTERM [PID]
+-- Kills the process that matches the process ID. By default it shuts down
+   the process and allows it to exit gracefully (close files, etc.). Find
+   the PID using "top" or "ps aux" or "ps aux | grep PROGRAMNAME"
+
+kill -KILL [PID]
+kill -SIGKILL [PID]
+kill -9 [PID]
+-- Kills the process that matches the process ID. Forces the process to
+   quit. It seems like the force quit option in OSX's Activity Monitor
+
+kill -STOP [PID]
+-- Kills the process that matches the process ID and stops the job. It's
+   similar to hitting Control-Z and pausing the process. 
