@@ -216,3 +216,23 @@ kill -9 [PID]
 kill -STOP [PID]
 -- Kills the process that matches the process ID and stops the job. It's
    similar to hitting Control-Z and pausing the process. 
+
+env 
+-- Print the environmental variables
+
+$ENVNAME
+-- The value of an environmental variable
+
+ENVNAME="Value of the environmental variable"
+-- Set/create the environmental variable with that value
+
+echo
+-- Echo back (print) the arguments that are passed to it. (e.g. echo $HOME)
+   returns the value of the HOME variable
+
+export ENVNAME="new value"
+-- Set the environmental variable and save it to .bashrc (or .bash_profile)
+
+export PATH=/new/path/to/bin:$PATH
+-- Add a new dir path to the PATH variable, and then append the existing
+   PATH variable by calling the variable ($PATH)
